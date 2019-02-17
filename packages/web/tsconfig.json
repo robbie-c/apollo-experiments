@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig",
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "module": "esnext",
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve"
+  }
+}

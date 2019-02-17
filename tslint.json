@@ -1,0 +1,4 @@
+{
+  "README": "DO NOT ADD TO THIS FILE, INSTEAD CHANGE THE FILE LINKED BELOW",
+  "extends": "./tslint.config.js"
+}

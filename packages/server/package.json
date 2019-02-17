@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Robbie Coomber <robbie.coomber@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/server.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "scripts": {
+    "start": "ts-node src/server.ts"
+  },
+  "dependencies": {
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  }
+}
