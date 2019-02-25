@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "packages",
     "outDir": "build/dist",
     "module": "commonjs",
     "target": "es5",
@@ -19,7 +19,10 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "typeRoots": ["./typings", "./node_modules/@types"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules",
@@ -35,5 +38,10 @@
     "storybook-static",
     "coverage",
     "server"
-  ]
+  ],
+  "paths": {
+    "@server/*": ["server/*"],
+    "@server": ["server"],
+    "server/*": ["server/src/*"]
+  }
 }

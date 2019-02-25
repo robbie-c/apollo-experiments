@@ -1,8 +1,15 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "prettier": "prettier --write **/*.{ts,tsx,js,jsx,json,css,graphql,yaml}",
+    "tslint": "tslint --config tslint.config.js --project .",
+    "tscheck": "tsc --noEmit -p tsconfig.json"
+  },
   "devDependencies": {
+    "husky": "^1.3.1",
     "lerna": "^3.4.0",
+    "lint-staged": "^8.1.4",
     "prettier": "^1.16.4",
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.18.0",
@@ -13,5 +20,23 @@
   ],
   "dependencies": {
     "typescript": "^3.3.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,scss,css,graphql}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{ts,tsx,js,jsx}": [
+      "tslint --config tslint.config.js",
+      "jest --findRelatedTests"
+    ],
+    "*.{ts,tsx}": [
+      "bash -c \"yarn tscheck\" && true"
+    ]
   }
 }
